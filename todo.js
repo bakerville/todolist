@@ -72,10 +72,27 @@ const richard = {
 richard.sayName();  
 
 //  VERSION 3 requirements
-// It should store the todos array on an object
-// It should have a displayTodos method
-// It should have a addTodo method
+
+
+
 // It should have a changeTodo method
 // It should have a deleteTodo method
+
+// It should store the todos array on an object
+const todoList = {
+    todos: ['item 1','item 2','item 3'],
+    // It should have a displayTodos method
+    displayTodos: function (){
+        console.log('My Todos', this.todos);
+    },
+    // It should have a addTodo method
+    addTodo: function(todo) {
+        this.todos.push(todo);
+        this.displayTodos();
+    },
+};
+
+
+
 
 */
