@@ -71,7 +71,11 @@ const richard = {
 }
 richard.sayName();  
 
-
-
+//  VERSION 3 requirements
+// It should store the todos array on an object
+// It should have a displayTodos method
+// It should have a addTodo method
+// It should have a changeTodo method
+// It should have a deleteTodo method
 
 */
