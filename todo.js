@@ -10,7 +10,8 @@
 --todos[0] ="Changed!";
 5) It should have a way to delete a todo.
 - Example deleting the first item by stating its position and how many to delete.
-todos.splice(0,1);*/
+todos.splice(0,1);
+*/
 
 /*Version 2.0 Functions 
 var todos =['item 1', 'item 2', 'item 3']
@@ -37,8 +38,6 @@ function deleteTodo(position){
 deleteTodos(0); //deletes the first item
 */
 
-
-
 /*Interlude-Functions and variables, below doesn't work
 var myName ='Gordon';
 
@@ -53,7 +52,24 @@ console.log(secret);
 but the opposite isn't true. If you are outside, you can't look in.
 */
 
-/*Objects
+/*Version 3.0 Objects
+//myComputer is the object, and within the {} are the properties
+const myComputer = {
+    operatingSystem: 'windows 10', 
+    screenSize: '18 inches',
+    purchaseYear: '2017'
+};
+//objects and functions
+//sayName is a method as it is a object property equal to a function. 
+//In addtion the function that sayName is equal to is an anonamous function as it does not have a name.
+
+const richard = {
+    name: 'Richard',
+    sayName: function () {
+        console.log(this.name);
+    }
+}
+richard.sayName();  
 
 
 
