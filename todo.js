@@ -40,19 +40,18 @@ deleteTodos(0); //deletes the first item
 
 /*Interlude-Functions and variables, below doesn't work
 var myName ='Gordon';
-
 function sayName() {
     var secret = 'watchandcode';
     console.log(myName);
 }
 sayName();
 console.log(secret);
-
 // if you're inside of function, you can look out and see data, 
 but the opposite isn't true. If you are outside, you can't look in.
 */
 
-/*Version 3.0 Objects
+
+/*Version 3.0 Objects and Methods
 //myComputer is the object, and within the {} are the properties
 const myComputer = {
     operatingSystem: 'windows 10', 
@@ -69,15 +68,9 @@ const richard = {
         console.log(this.name);
     }
 }
-richard.sayName();  
+richard.sayName(); 
 
 //  VERSION 3 requirements
-
-
-
-// It should have a changeTodo method
-// It should have a deleteTodo method
-
 // It should store the todos array on an object
 const todoList = {
     todos: ['item 1','item 2','item 3'],
@@ -90,9 +83,20 @@ const todoList = {
         this.todos.push(todo);
         this.displayTodos();
     },
+    // It should have a changeTodo method
+    changeTodo: function(position, newValue) {
+        this.todos[position] = newValue;
+        this.displayTodos();
+    },
+    // It should have a deleteTodo method
+    deleteTodo: function(position) {
+        this.todos.splice(position, 1);
+        this.displayTodos();
+    }
 };
-
-
-
-
 */
+
+/* Version 4.0 More Objects and now Booleans
+
+
+ */
