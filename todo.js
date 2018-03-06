@@ -97,6 +97,8 @@ const todoList = {
 */
 
 /* Version 4.0 More Objects and now Booleans
-
+// todoList.addTodo should add objects
+// todoList.changeTodo should change the todoText property
+// todoList.toggleCompleted should change thecompleted property
 
  */
