@@ -123,6 +123,11 @@ const todoList = {
     deleteTodo: function(position) {
         this.todos.splice(position, 1);
         this.displayTodos();
+    },
+    toggleCompleted: function (position) {
+        let todo = this.todos[position];
+        todo.completed = !todo.completed; //if todo.completed is true, then this will flip it to false, and vice versa
+        this.displayTodos();
     }
 };
  */
