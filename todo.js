@@ -115,8 +115,9 @@ const todoList = {
         });
         this.displayTodos();
     },
-    changeTodo: function(position, newValue) {
-        this.todos[position] = newValue;
+
+    changeTodo: function(position, todoText) {
+        this.todos[position].todoText = todoText; //using dot notation to grab just the todoText property from the object
         this.displayTodos();
     },
     deleteTodo: function(position) {
