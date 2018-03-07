@@ -100,5 +100,28 @@ const todoList = {
 // todoList.addTodo should add objects
 // todoList.changeTodo should change the todoText property
 // todoList.toggleCompleted should change thecompleted property
+//Boolean is either true or false
 
+const todoList = {
+    todos: [],
+    displayTodos: function (){
+        console.log('My Todos', this.todos);
+    },
+    // todoList.addTodo should add objects
+    addTodo: function(todoText) {  //addTodo('Hi')
+        this.todos.push({
+            todoText: todoText,    // this would be todoText: 'Hi',
+            completed:false
+        });
+        this.displayTodos();
+    },
+    changeTodo: function(position, newValue) {
+        this.todos[position] = newValue;
+        this.displayTodos();
+    },
+    deleteTodo: function(position) {
+        this.todos.splice(position, 1);
+        this.displayTodos();
+    }
+};
  */
