@@ -131,9 +131,15 @@ const todoList = {
     }
 };
  */
+
 /* VERSION 5.0 Loops, Loops, and more Loops
-
-
-
+//example below
+for (var i = 0; i < testArray.length, i++){
+    console.log(testArray[i]);
+}
+//VERSION 5 REQUIRMENTS
+// .displayTodos should show .todoText
+// .displayTodos should tell you if .todos is empty
+// .displayTodos should show .completed
 
 */
