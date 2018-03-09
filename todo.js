@@ -144,11 +144,16 @@ for (var i = 0; i < testArray.length, i++){
 var todoList = {
     todos: [],
     displayTodos: function (){
+        
+        if(this.todos.length === 0) {
+            console.log('Your todo list is empty!');
+        } else {
         console.log('My Todos:');
         // .displayTodos should show .todoText
         for (var i = 0; i < this.todos.length; i++) {
             console.log(this.todos[i].todoText);
         }
+       }
     },
     // todoList.addTodo should add objects
     addTodo: function(todoText) {  //addTodo('Hi')
