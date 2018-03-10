@@ -143,16 +143,18 @@ for (var i = 0; i < testArray.length, i++){
 // .displayTodos should show .completed
 var todoList = {
     todos: [],
-    displayTodos: function (){
-        
+    displayTodos: function (){        
         if(this.todos.length === 0) {
             console.log('Your todo list is empty!');
         } else {
         console.log('My Todos:');
-        // .displayTodos should show .todoText
-        for (var i = 0; i < this.todos.length; i++) {
-            console.log(this.todos[i].todoText);
-        }
+          for (var i = 0; i < this.todos.length; i++) {
+            if (this.todos[i].completed === true) {
+                console.log('(x)', this.todos[i].todoText);
+            } else {
+                console.log('( )', this.todos[i].todoText);
+            }            
+         }
        }
     },
     // todoList.addTodo should add objects
@@ -178,4 +180,12 @@ var todoList = {
         this.displayTodos();
     }
 };
+*/
+
+/*VERSION 6.0 .toggleAll
+//Requirements
+// .toggleAll: If everything is true, make everything false.
+// .toggleAll: Otherwise, make everything true.
+
+
 */
