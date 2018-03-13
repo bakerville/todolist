@@ -71,8 +71,32 @@ var todoList = {
 
 */
 
-/*Version 7
-//Interlude Data Types and comparisons
+/*Interlude Data Types and comparisons
+//JavaScript data Types
+/// {} // todolist, arrays, functions
+//Primitives (building blocks)
+//// string: 'look at this string!'
+//// number: 1, 2, 3, 4 ...
+//// boolean: true or false
+//// undefined: a value that hasn't been set
+//// Null: 'nothing'
+string comparisons: 'gordan' === 'gordan' > true
+string comparisons: 'gordan1' === 'gordan' > false
+number comparisons: 100 === 100 > true
+number comparisons: 1 === 2 > false
+boolean comparison: true === true > true
+boolean comparison: false === false > true
+boolean comparison: true === false > false
+undefined comparison: undefined === undefined > true
+null comparison: null === null > true
+///COMPARISONS WITH OBJECTS
+
+
+
+
+*/
+
+/*Version 7.0 HTML and the DOM
 
 
 
