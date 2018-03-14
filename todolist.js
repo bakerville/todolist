@@ -80,6 +80,7 @@ var todoList = {
 //// boolean: true or false
 //// undefined: a value that hasn't been set
 //// Null: 'nothing'
+//COMPARISONS WITH PRIMITIVES(values)
 string comparisons: 'gordan' === 'gordan' > true
 string comparisons: 'gordan1' === 'gordan' > false
 number comparisons: 100 === 100 > true
@@ -89,10 +90,19 @@ boolean comparison: false === false > true
 boolean comparison: true === false > false
 undefined comparison: undefined === undefined > true
 null comparison: null === null > true
-///COMPARISONS WITH OBJECTS
 
+///COMPARISONS WITH OBJECTS(references, basically a memory address)
+{} === {} > false (doesn't follow the primatives behavior above.)
+//Javascript creates a different 'memory address' for each object.
+//though they may look the same, they have different addresses and that is what is compared.
 
+[1, 2, 3] === [1, 2, 3] > false
 
+var houseA = {};
+houseA === houseA > true
+
+//HOW ARE PRIMATIVES AND OBJECTS STORED INSIDE VARIABLES?
+//code example 1
 
 */
 
