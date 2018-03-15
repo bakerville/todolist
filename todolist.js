@@ -102,12 +102,44 @@ var houseA = {};
 houseA === houseA > true
 
 //HOW ARE PRIMATIVES AND OBJECTS STORED INSIDE VARIABLES?
-//code example 1
+//Code Example 1
+var myPrimitive = 10;
+var myObject = {name: 'gordon'}; > creates a new object with a 'memory address'
+
+//Code Example 2
+var myHouse = { color: 'blue'}; > creates an object with a color property = to blue. this has a memory address.
+myHouse.color = 'red'; > JS will look at the variable myHouse, will see the 'memory address' and travel to that address. JS will then change that color property. 
+
+//Code Example 3
+var myHouse = {color: 'blue'}; 
+var color = myHouse.color;// for color and myHouse to be be the same color 'red', var color = myHouse;
+color = 'red'; // if this was instead color.color = 'red', then both color and myHouse.color would be red in the console.
+// color in the console is 'red'
+// myHouse.color in the console is still 'blue'
+
+
+//Code Example 4
+var myHouse1 = {color: 'blue'}; 
+var myHouse2 = myHouse1;
+myHouse2.color = 'red';
+// myHouse1 in the console is 'red'
+// myHouse2 in the console is 'red'
+
+//Code Example 5
+var myHouse1 = {color: 'blue'};
+var myHouse2 = {color: 'blue'};
+myHouse2.color = 'red';
+//myHouse1 is = to blue
+//myHouse2 is = to red
 
 */
 
 /*Version 7.0 HTML and the DOM
-
+//Version 7.0 Requirements
+//There should be a  "Display todos" button and a "Toggle All" button in the app.
+//Clicking "Display todos" should run todoList.displyTodos.
+//Clicking "Toggle all" should run todoList.toggleAll.
+//HTML Essentials
 
 
 */
