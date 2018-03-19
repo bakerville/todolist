@@ -254,8 +254,12 @@ var handlers ={
         todoList.toggleAll();
     }   
 };
-
+*/
+/* Version 9 Escaping from the Console
+//Version 9 requirements
+//--There should be an li element for every todo
+//--Each li element should contain .todoText
+//--Each li element should show .completed
 
 */
-
 
