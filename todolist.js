@@ -260,6 +260,13 @@ var handlers ={
 //--There should be an li element for every todo
 //--Each li element should contain .todoText
 //--Each li element should show .completed
+ var view = {
+    displayTodos: function() {
+        var todosUl = document.querySelector('ul');
+        var todosLi = document.querySelector('li');
+        todosUl.appendChild(todoLi);
 
+    }    
+ };
 */
 
