@@ -257,15 +257,21 @@ var handlers ={
 */
 /* Version 9 Escaping from the Console
 //Version 9 requirements
-//--There should be an li element for every todo
-//--Each li element should contain .todoText
 //--Each li element should show .completed
+//--There should be an li element for every todo
  var view = {
     displayTodos: function() {
         var todosUl = document.querySelector('ul');
-        var todosLi = document.querySelector('li');
-        todosUl.appendChild(todoLi);
+        todosUl.innerHTML =''; 
+        for (var i = 0; i < todoList.todos.length; i++){                        
+            var todosLi = document.createElement('li');
 
+            //'(x)
+
+            //--Each li element should contain .todoText
+            todoLi.textContent = todoList.todos[i].todoText;
+            todosUl.appendChild(todoLi);
+        }
     }    
  };
 */
