@@ -143,40 +143,27 @@ myHouse2.color = 'red';
 
 var todoList = {
     todos: [],
-    displayTodos: function (){        
-        if(this.todos.length === 0) {
-            console.log('Your todo list is empty!');
-        } else {
-        console.log('My Todos:');
-          for (var i = 0; i < this.todos.length; i++) {
-            if (this.todos[i].completed === true) {
-                console.log('(x)', this.todos[i].todoText);
-            } else {
-                console.log('( )', this.todos[i].todoText);
-            }            
-         }
-       }
-    },
+    
     // todoList.addTodo should add objects
     addTodo: function(todoText) {  //addTodo('Hi')
         this.todos.push({
             todoText: todoText,    // this would be todoText: 'Hi',
             completed:false
         });
-        this.displayTodos();
+        
     },
     changeTodo: function(position, todoText) {
         this.todos[position].todoText = todoText; //using dot notation to grab just the todoText property from the object
-        this.displayTodos();
+        
     },
     deleteTodo: function(position) {
         this.todos.splice(position, 1);
-        this.displayTodos();
+        
     },
     toggleCompleted: function (position) {
         let todo = this.todos[position];
         todo.completed = !todo.completed; //if todo.completed is true, then this will flip it to false, and vice versa
-        this.displayTodos();
+        
     },
     //version 6 addition
     toggleAll: function() {
@@ -200,8 +187,7 @@ var todoList = {
             for(var i = 0; i < totalTodos; i++){
                 this.todos[i].completed = true;
             }
-        }
-        this.displayTodos();        
+        }              
     }
 };
 //version 7 additions---don't use!! Use version 8 additions.
@@ -220,15 +206,13 @@ toggleAllButton.addEventListener('click', function() {
 /*Version 8.0 Getting Data from Inputs
 //-version 7 additions replaced by the refactored code below.
 var handlers ={
-    displayTodos: function() {
-        todoList.displayTodos();
-    },
     //Version 8 Requirements
     //--It should have working controls for .addTodo
     addTodo: function() {
        var addTodoTextInput = document.getElementById('addTodoTextInput');
        todoList.addTodo(addTodoTextInput.value);
        addTodoTextInput.value=''; //input will clear after adding the item
+       view.displayTodos();
     },
     //--It should have working controls for .changeTodo
     changeTodo: function() {
@@ -237,39 +221,50 @@ var handlers ={
         todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
         changeTodoPositionInput.value='';
         changeTodoTextInput.value='';
+        view.displayTodos();
     },
     //--It should have working controls for .deleteTodo
     deleteTodo: function() {
         var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
         todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
         deleteTodoTextInput.value='';
+        view.displayTodos();
     },
     //--It should have working controls for .toggleCompleted
     toggleCompleted: function() {
         var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
         todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
         toggleCompletedTextInput.value='';
+        view.displayTodos();
     },
     toggleAll: function() {
         todoList.toggleAll();
+        view.displayTodos();
     }   
 };
 */
 /* Version 9 Escaping from the Console
 //Version 9 requirements
-//--Each li element should show .completed
 //--There should be an li element for every todo
+//--Each li element should contain .todoText
+//--Each li element should show .completed
+
  var view = {
     displayTodos: function() {
         var todosUl = document.querySelector('ul');
         todosUl.innerHTML =''; 
         for (var i = 0; i < todoList.todos.length; i++){                        
             var todosLi = document.createElement('li');
+            var todo = todoList.todos[i];
+            var todoTextWithCompletion = '';
 
-            //'(x)
+            if (todo.completed === true) {
+                todoTextWithCompletion = '(x) '+ todo.todoText;
+            } else {
+                todoTextWithCompletion = '( ) '+ todo.todoText;
+            }
 
-            //--Each li element should contain .todoText
-            todoLi.textContent = todoList.todos[i].todoText;
+            todoLi.textContent = todoTextWithCompletion;            
             todosUl.appendChild(todoLi);
         }
     }    
