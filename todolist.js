@@ -224,10 +224,8 @@ var handlers ={
         view.displayTodos();
     },
     //--It should have working controls for .deleteTodo
-    deleteTodo: function() {
-        var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
-        todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
-        deleteTodoTextInput.value='';
+    deleteTodo: function(position) {
+        todoList.deleteTodo(position);
         view.displayTodos();
     },
     //--It should have working controls for .toggleCompleted
@@ -263,19 +261,44 @@ var handlers ={
             } else {
                 todoTextWithCompletion = '( ) '+ todo.todoText;
             }
-
-            todoLi.textContent = todoTextWithCompletion;            
+            todoLi.id = i;
+            todoLi.textContent = todoTextWithCompletion;
+            todoUl.appendChild(this.createDeleteButton());            
             todosUl.appendChild(todoLi);
         }
+    },
+    // Version 10.0 addition - the pattern used is "event delegation"
+    createDeleteButton: function() {
+        var deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.className = 'deleteButton';
+        return deleteButton;
+    },
+    setUpEventListeners: function() {
+        var todosUl = document.querySelector('ul');
+        todosUl.addEventListener('click', function(e) {
+
+        //get the element that was clicked on.
+        var elementClicked = event.target;
+
+        //Check if elementClicked is a delete button.
+        if (elementClicked.className === 'deleteButton') {
+        handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+        }
+      });
     }    
  };
+view.setUpEventListeners();
 */
 
-// Version 10.0
-/*
-//-There should be a way to create delete buttons
-//-There should be a delete button for each todo
-//-Each li should have an id that has the todo position
-//-Delete buttons should have access to the todo id
-//-Clicking delete should update todoList.todos and the DOM
+/*Version 11.0 Destroy all for loops
+//Requirements
+//-todoList.toggleAll should use forEach
+//-view.displayTodos should use forEach
 */
+
+
+
+
+
+
