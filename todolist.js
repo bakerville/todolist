@@ -276,9 +276,24 @@ var handlers ={
     displayTodos: function() {
         var todosUl = document.querySelector('ul');
         todosUl.innerHTML =''; 
-        for (var i = 0; i < todoList.todos.length; i++){                        
-            var todosLi = document.createElement('li');
-            var todo = todoList.todos[i];
+        // for (var i = 0; i < todoList.todos.length; i++){                        
+        //     var todosLi = document.createElement('li');
+        //     var todo = todoList.todos[i];
+        //     var todoTextWithCompletion = '';
+
+        //     if (todo.completed === true) {
+        //         todoTextWithCompletion = '(x) '+ todo.todoText;
+        //     } else {
+        //         todoTextWithCompletion = '( ) '+ todo.todoText;
+        //     }
+        //     todoLi.id = i;
+        //     todoLi.textContent = todoTextWithCompletion;
+        //     todoUl.appendChild(this.createDeleteButton());            
+        //     todosUl.appendChild(todoLi);
+        // } 
+
+        todoList.todos.forEach(function(todo, position) {
+            var todosLi = document.createElement('li');            
             var todoTextWithCompletion = '';
 
             if (todo.completed === true) {
@@ -286,11 +301,12 @@ var handlers ={
             } else {
                 todoTextWithCompletion = '( ) '+ todo.todoText;
             }
-            todoLi.id = i;
+
+            todoLi.id = position;
             todoLi.textContent = todoTextWithCompletion;
             todoUl.appendChild(this.createDeleteButton());            
             todosUl.appendChild(todoLi);
-        }
+        }, this); //this will reference the display todos
     },
     // Version 10.0 addition - the pattern used is "event delegation"
     createDeleteButton: function() {
