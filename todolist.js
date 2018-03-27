@@ -133,7 +133,7 @@ myHouse2.color = 'red';
 //myHouse2 is = to red
 
 */
-
+//Application starts from here.
 /*Version 7.0 HTML and the DOM
 //Version 7.0 Requirements
 //There should be a  "Display todos" button and a "Toggle All" button in the app.
@@ -171,23 +171,48 @@ var todoList = {
         var completedTodos = 0;
 
         // Get number of completed todos.
-        for (var i = 0; i < totalTodos; i++){
-            if (this.todos[i].completed === true){
+        //for (var i = 0; i < totalTodos; i++){
+           // if (this.todos[i].completed === true){
+           //     completedTodos++;
+          //  }
+        //}
+        //replaced by the forEach function below
+
+        this.todos.forEach(function(todo) {
+            if (todos.completed === true) {
                 completedTodos++;
             }
-        }
+        });
+
         // Case 1: If everything is true, make everything false.
-        if (completedTodos === totalTodos){
-            // make everything false
-            for(var i = 0; i < totalTodos; i++){
-                this.todos[i].completed = false;
-            }
+        // if (completedTodos === totalTodos){
+        //     // make everything false
+        //     //for(var i = 0; i < totalTodos; i++){
+        //      //   this.todos[i].completed = false;
+        //    // }
+        //    //replaced by the forEach function below
+        //    this.todos.forEach(function(todo){
+        //     todos.completed = false;
+        //    });
+        //     // Case 2: Otherwise, make everything true.
+        // } else {
+        //    // for(var i = 0; i < totalTodos; i++){
+        //       //  this.todos[i].completed = true;
+        //    // }
+        //    //can use forEach instead of the for loop
+        //    this.todos.forEach(function(todo){
+        //     todo.completed = true;
+        //    });
+        // } 
+          this.todo.forEach(function(todo) {
+            // Case 1: If everything is true, make everything false.
+            if (completedTodos === totalTodos) {
+                todo.completed = false;
             // Case 2: Otherwise, make everything true.
-        } else {
-            for(var i = 0; i < totalTodos; i++){
-                this.todos[i].completed = true;
+            } else {
+                todo.completed = true;
             }
-        }              
+          });           
     }
 };
 //version 7 additions---don't use!! Use version 8 additions.
